@@ -12,15 +12,15 @@ def principal(pagina:ft.Page):
     cuadro_intento = ft.TextField(label="Introduce tu número aquí", width=250)
     def comprobar_numero(e):
         nonlocal intentos
-        intento= int(cuadro_intento.value)
-        intentos = intentos -1
-        texto_intentos.value = f"¡Numero de intentos!:{(intentos)}"
-        if intentos == 0:
-            texto_intentos.value = f"¡Perdiste! ❌ El número secreto era {numero_secreto}"
-            pagina.update()
-            boton_probar.disabled=True
-        if intento==numero_secreto:
-            texto_pistas.value = "¡Felicidades, Matías! ¡Adivinaste! 🎉🏆"
+        intento= int(cuadro_intento.value)                                                            #L
+        intentos = intentos -1                                                                        #L
+        texto_intentos.value = f"¡Numero de intentos!:{(intentos)}"                                   #V
+        if intentos == 0:                                                                             #L
+            texto_intentos.value = f"¡Perdiste! ❌ El número secreto era {numero_secreto}"            #V
+            pagina.update()                                                                            #L
+            boton_probar.disabled=True                                                                 #L
+        if intento==numero_secreto:                                                                    #L
+            texto_pistas.value = "¡Felicidades, Matías! ¡Adivinaste! 🎉🏆"                            #L
             texto_intentos.color = "green"
         elif intento < numero_secreto:
             texto_pistas.value = "¡Muy bajo! Intenta con un número más grande!"
